@@ -11,7 +11,7 @@ public class DemoInfo {
 	public static void main(String[] args) {
 		
 		try {
-			System.out.println("Serial Number : " + SystemInfo.getSerial() + "\n\n\n");
+			System.out.println("Serial Number : " + SystemInfo.getSerial());
 			System.out.println("CPU Revision : " + SystemInfo.getCpuRevision());
 			System.out.println("CPU Architecture : " + SystemInfo.getCpuArchitecture());
 			System.out.println("CPU Part: " + SystemInfo.getCpuPart());
