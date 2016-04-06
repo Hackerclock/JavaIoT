@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="lib/pi4j-core.jar" sourcepath="/home/hackerclock/Scaricati/lib/pi4j-service.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/hackerclock/Scaricati/pi4j-core-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/pi4j-device.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/hackerclock/Scaricati/pi4j-device-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/pi4j-gpio-extension.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/hackerclock/Scaricati/pi4j-gpio-extension-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/pi4j-service.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/home/hackerclock/Scaricati/pi4j-service-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/log4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
