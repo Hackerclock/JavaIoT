@@ -2,6 +2,7 @@ package com.kettydo.rpi.common;
 
 public enum Writer {
 	
-	MQTT;
+	MQTT,
+	HTTP;
 		
 }

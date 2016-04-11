@@ -2,15 +2,15 @@ package com.kettydo.rpi.business;
 
 import com.kettydo.rpi.common.Writer;
 import com.kettydo.rpi.model.StazioneMeteoReader;
-import com.kettydo.rpi.model.StazioneMeteoWriter;
 
 public class DemoStazioneMeteo {
 
 	public static void main(String[] args) {
 		
 		StazioneMeteoReader reader = new StazioneMeteoReader();
-		StazioneMeteoWriter writer = StazioneMeteoWriterFactory.getWriter(Writer.MQTT);
-		
+		// WriterInterfaces writer = (StazioneMeteoWriter) StazioneMeteoWriterFactory.getWriter(Writer.MQTT);
+		WriterInterfaces writer = StazioneMeteoWriterFactory.getWriter(Writer.HTTP);
+				
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run() {
 				reader.shutdown();

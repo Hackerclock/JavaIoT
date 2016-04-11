@@ -9,10 +9,11 @@ import org.eclipse.paho.client.mqttv3.MqttSecurityException;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 import com.kettydo.rpi.business.StazioneMeteoDati;
+import com.kettydo.rpi.business.WriterInterfaces;
 
 import flexjson.JSONSerializer;
 
-public class StazioneMeteoWriter {
+public class StazioneMeteoWriter implements WriterInterfaces{
 	
 	private final String broker;
 	private final String clientId;
@@ -89,7 +90,7 @@ public class StazioneMeteoWriter {
 		
 	}
 
-	public void write(StazioneMeteoDati data) {
+	public boolean write(StazioneMeteoDati data) {
 		
 		String topic = "StazioneMeteoAlessioCNA";
 		int qos = 2;
@@ -106,6 +107,8 @@ public class StazioneMeteoWriter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		return true;
 		
 	}
 	
