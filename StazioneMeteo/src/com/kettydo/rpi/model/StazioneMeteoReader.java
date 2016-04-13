@@ -26,7 +26,7 @@ public class StazioneMeteoReader {
 		
 	public StazioneMeteoReader () {
 		this.controller = GpioFactory.getInstance();
-		this.pinR = controller.provisionDigitalOutputPin(RaspiPin.GPIO_01, "Red", PinState.LOW);
+		this.pinR = controller.provisionDigitalOutputPin(RaspiPin.GPIO_29, "Red", PinState.LOW);
 		this.dht22 = new DHT22(28, "/home/pi/dht22");
 		this.bmp180 = new BMP180();
 		this.adc = new MCP3008();
@@ -38,7 +38,7 @@ public class StazioneMeteoReader {
 		return dht22;
 	}
 
-
+	
 	public BMP180 getBmp180() {
 		return bmp180;
 	}
@@ -47,11 +47,12 @@ public class StazioneMeteoReader {
 		return adc;
 	}
 
+	
 	public ML8511 getUv() {
 		return uv;
 	}
 	
-
+	
 	public TGS2600 getTgs2600() {
 		return tgs2600;
 	}

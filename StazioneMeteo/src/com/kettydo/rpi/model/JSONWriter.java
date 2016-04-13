@@ -14,7 +14,7 @@ import flexjson.JSONSerializer;
 
 public class JSONWriter implements WriterInterfaces {
 	
-	private String serviceUrl = "http://192.168.10.123:8080/RaspberryPiServer/save";
+	private String serviceUrl = "http://10.24.105.55:8080/RaspberryPiServer/save";
 
 	private URL url;
 	private HttpURLConnection con;
