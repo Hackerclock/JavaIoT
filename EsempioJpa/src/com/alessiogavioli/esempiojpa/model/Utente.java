@@ -2,9 +2,10 @@ package com.alessiogavioli.esempiojpa.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
-
 import javax.persistence.*;
+
 
 @Entity(name = "utente")
 public class Utente implements Serializable {
@@ -28,16 +29,16 @@ public class Utente implements Serializable {
 	@Column(length = 255)
 	private String username;
 	
-	@Column(length = 255)
+	@Column(length = 255, nullable = true)
 	private String email;
 	
 	private Date dataRegistrazione;
 	private Boolean attivo;
 	
-	@OneToMany
+	@ManyToOne
 	private Azienda azienda;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Set<Gruppo> gruppi;
 	
 	
@@ -53,6 +54,7 @@ public class Utente implements Serializable {
 		this.email = email;
 		this.dataRegistrazione = dataRegistrazione;
 		this.attivo = attivo;
+		this.gruppi = new HashSet<>();
 	}
 
 
