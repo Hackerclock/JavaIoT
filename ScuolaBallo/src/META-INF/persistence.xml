@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+	<persistence-unit name="ScuolaBallo" transaction-type="RESOURCE_LOCAL">
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.alessiogavioli.scuolaballo.model.Corso</class>
+		<class>com.alessiogavioli.scuolaballo.model.Docente</class>
+		<class>com.alessiogavioli.scuolaballo.model.Qualifica</class>
+		<class>com.alessiogavioli.scuolaballo.model.Scuola</class>
+		<class>com.alessiogavioli.scuolaballo.model.Studente</class>
+		<properties>
+			<property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/scuolaballo" />
+			<property name="hibernate.connection.username" value="postgres" />
+			<property name="hibernate.connection.password" value="postgres" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+		</properties>
+	</persistence-unit>
+</persistence>
