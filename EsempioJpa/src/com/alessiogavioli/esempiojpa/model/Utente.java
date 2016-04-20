@@ -6,6 +6,11 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.*;
 
+@NamedQueries ({
+
+	@NamedQuery(name = "UtenteNome", query = "SELECT u FROM com.alessiogavioli.esempiojpa.model.Utente u WHERE u.nome=:nome")
+	
+})
 
 @Entity(name = "utente")
 public class Utente implements Serializable {
