@@ -46,19 +46,7 @@ public class Qualifica implements Serializable {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Qualifica [");
-		if (id != null) {
-			builder.append("id=");
-			builder.append(id);
-			builder.append(", ");
-		}
-		if (nome != null) {
-			builder.append("nome=");
-			builder.append(nome);
-		}
-		builder.append("]");
-		return builder.toString();
+		return nome;
 	}
 	
 	

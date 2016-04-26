@@ -10,9 +10,6 @@ import com.alessiogavioli.scuolaballo.model.Scuola;
 import com.alessiogavioli.scuolaballo.model.Studente;
 import com.alessiogavioli.scuolaballo.web.JSONWriter;
 
-import flexjson.JSONDeserializer;
-import flexjson.JSONSerializer;
-
 public class DemoJpa {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -23,16 +20,20 @@ public class DemoJpa {
 		Studente stu1 = new Studente();
 		stu1.setNome("Alessio");
 		stu1.setIndirizzo("Modena");
+		System.err.println(stu1.toString());
 		Studente stu2 = new Studente();
 		stu2.setNome("Lorenzo");
 		stu2.setIndirizzo("Reggio");
+		System.err.println(stu2.toString());
 		Studente stu3 = new Studente();
 		stu3.setNome("Andrea");
 		stu3.setIndirizzo("Sassuolo");
+		System.err.println(stu3.toString());
 		studenti.add(stu1);
 		studenti.add(stu2);
 		studenti.add(stu3);
 		
+		Set<Docente> docenti = new HashSet<>();
 		Docente docente = new Docente();
 		Qualifica qua1 = new Qualifica();
 		qua1.setNome("Tango");
@@ -46,18 +47,21 @@ public class DemoJpa {
 		qualifiche.add(qua2);
 		qualifiche.add(qua3);
 		docente.setQualifiche(qualifiche);
+		docenti.add(docente);
 		
 		Corso corso1 = new Corso();
 		corso1.setDocente(docente);
 		corso1.setQualifica(qua1);
 		corso1.setStudenti(studenti);
 		corso1.setNome("Tango");
+		System.err.println("CORSO1: " + corso1.toString());
 		
 		Corso corso2 = new Corso();
-		corso1.setDocente(docente);
-		corso1.setQualifica(qua2);
-		corso1.setStudenti(studenti);
-		corso1.setNome("Salsa");
+		corso2.setDocente(docente);
+		corso2.setQualifica(qua2);
+		corso2.setStudenti(studenti);
+		corso2.setNome("Salsa");
+		System.err.println("CORSO2: " + corso2.toString());
 		
 		Set<Corso> corsi = new HashSet<>();
 		corsi.add(corso1);
@@ -67,6 +71,8 @@ public class DemoJpa {
 		scuola.setCorsi(corsi);
 		scuola.setpIva("XXXXXXXXXXXXX");
 		scuola.setRagioneSociale("Bailando");
+		scuola.setDocenti(docenti);
+		System.err.println("SCUOLA: " + scuola.toString());
 		
 		JSONWriter json = new JSONWriter();
 		for (int i = 0; i < 5; i++){

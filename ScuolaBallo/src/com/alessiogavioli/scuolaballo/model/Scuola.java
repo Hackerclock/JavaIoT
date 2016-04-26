@@ -1,12 +1,14 @@
 package com.alessiogavioli.scuolaballo.model;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 @Entity(name = "Scuole")
@@ -28,15 +30,19 @@ public class Scuola implements Serializable {
 	@OneToMany
 	private Set<Corso> corsi;
 	
+	@ManyToMany
+	private Set<Docente> docenti;
+	
 	
 
 	public Scuola() {
 	}
 
-	public Scuola(String ragioneSociale, String pIva, Set<Corso> corsi) {
+	public Scuola(String ragioneSociale, String pIva, Set<Corso> corsi, Set<Docente> docenti) {
 		this.ragioneSociale = ragioneSociale;
 		this.pIva = pIva;
 		this.corsi = corsi;
+		this.docenti = docenti;
 	}
 
 	
@@ -65,35 +71,28 @@ public class Scuola implements Serializable {
 	}
 
 	
+	public Set<Docente> getDocenti() {
+		return docenti;
+	}
+	public void setDocenti(Set<Docente> docenti) {
+		this.docenti = docenti;
+	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Scuola [");
-		if (id != null) {
-			builder.append("id=");
-			builder.append(id);
-			builder.append(", ");
-		}
-		if (ragioneSociale != null) {
-			builder.append("ragioneSociale=");
-			builder.append(ragioneSociale);
-			builder.append(", ");
-		}
-		if (pIva != null) {
-			builder.append("pIva=");
-			builder.append(pIva);
-			builder.append(", ");
-		}
-		if (corsi != null) {
-			builder.append("corsi=");
-			builder.append(corsi);
-		}
-		builder.append("]");
-		return builder.toString();
+		StringBuilder c = new StringBuilder();
+		StringBuilder d = new StringBuilder();
+		
+		for (Iterator<Corso> it = corsi.iterator(); it.hasNext(); )
+			c.append(it.next().toString() + " - ");
+		for (Iterator<Docente> itD = docenti.iterator(); itD.hasNext(); )
+			d.append(itD.next().toString() + " - ");
+		
+		return ragioneSociale + " " + pIva + " "+ c.toString() + " " + d.toString() + "\n\n";
 	}
 
 	

@@ -1,6 +1,7 @@
 package com.alessiogavioli.scuolaballo.model;
 
 import java.io.Serializable;
+import java.util.Iterator;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -91,34 +92,11 @@ public class Corso implements Serializable {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Corso [");
-		if (id != null) {
-			builder.append("id=");
-			builder.append(id);
-			builder.append(", ");
-		}
-		if (nome != null) {
-			builder.append("nome=");
-			builder.append(nome);
-			builder.append(", ");
-		}
-		if (docente != null) {
-			builder.append("docente=");
-			builder.append(docente);
-			builder.append(", ");
-		}
-		if (studenti != null) {
-			builder.append("studenti=");
-			builder.append(studenti);
-			builder.append(", ");
-		}
-		if (qualifica != null) {
-			builder.append("qualifica=");
-			builder.append(qualifica);
-		}
-		builder.append("]");
-		return builder.toString();
+		StringBuilder s = new StringBuilder();
+		for (Iterator<Studente> it = studenti.iterator(); it.hasNext(); )
+			s.append(it.next().toString() + " - ");
+		
+		return nome + " docente: " + docente.toString() + " - " + s.toString() + qualifica.toString();
 	}
 	
 	

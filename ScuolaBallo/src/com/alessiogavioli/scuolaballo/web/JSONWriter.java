@@ -36,7 +36,8 @@ public class JSONWriter {
 			System.out.println("Preserializzazione: " + scuola.toString() + "\n\n");
 			
 			JSONSerializer s = new JSONSerializer();
-			s.exclude("class", "corso.class", "docente.class", "studente.class", "scuola.class", "qualifica.class");
+			//s.exclude("class", "corso.class", "docente.class", "studente.class", "scuola.class", "qualifica.class");
+			s.prettyPrint(true);
 			String json = s.deepSerialize(scuola);
 			System.out.println("Serializzazione: " + json + "\n\n");
 
