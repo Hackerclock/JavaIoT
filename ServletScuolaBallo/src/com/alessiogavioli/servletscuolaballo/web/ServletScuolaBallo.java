@@ -37,7 +37,7 @@ public class ServletScuolaBallo extends HttpServlet {
 		JSONDeserializer<Scuola> ds = new JSONDeserializer<>();
 		Scuola sc = ds.use(null, Scuola.class).deserialize(n);
 		System.out.println("Deserializzazione: " + sc.toString());
-		writer.print(sc.toString());
+		writer.print("Lettura terminata");
 	}
 
 	/**
