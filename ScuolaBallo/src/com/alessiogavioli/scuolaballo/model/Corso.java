@@ -87,13 +87,38 @@ public class Corso implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
+
 
 	@Override
 	public String toString() {
-		return "Corso [id=" + id + ", nome=" + nome + ", docente=" + docente + ", studenti=" + studenti + ", qualifica="
-				+ qualifica + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Corso [");
+		if (id != null) {
+			builder.append("id=");
+			builder.append(id);
+			builder.append(", ");
+		}
+		if (nome != null) {
+			builder.append("nome=");
+			builder.append(nome);
+			builder.append(", ");
+		}
+		if (docente != null) {
+			builder.append("docente=");
+			builder.append(docente);
+			builder.append(", ");
+		}
+		if (studenti != null) {
+			builder.append("studenti=");
+			builder.append(studenti);
+			builder.append(", ");
+		}
+		if (qualifica != null) {
+			builder.append("qualifica=");
+			builder.append(qualifica);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	

@@ -43,13 +43,27 @@ public class Qualifica implements Serializable {
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
 
 	@Override
 	public String toString() {
-		return "Qualifica [id=" + id + ", nome=" + nome + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Qualifica [");
+		if (id != null) {
+			builder.append("id=");
+			builder.append(id);
+			builder.append(", ");
+		}
+		if (nome != null) {
+			builder.append("nome=");
+			builder.append(nome);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
+	
+	
+
+	
 	
 	
 

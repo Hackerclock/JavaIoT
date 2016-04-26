@@ -60,12 +60,31 @@ public class Docente implements Serializable {
 		return serialVersionUID;
 	}
 
-	
-	
 	@Override
 	public String toString() {
-		return "Docente [id=" + id + ", nome=" + nome + ", qualifiche=" + qualifiche + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Docente [");
+		if (id != null) {
+			builder.append("id=");
+			builder.append(id);
+			builder.append(", ");
+		}
+		if (nome != null) {
+			builder.append("nome=");
+			builder.append(nome);
+			builder.append(", ");
+		}
+		if (qualifiche != null) {
+			builder.append("qualifiche=");
+			builder.append(qualifiche);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
+
+	
+	
+	
 	
 	
 

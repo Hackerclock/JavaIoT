@@ -69,12 +69,36 @@ public class Scuola implements Serializable {
 		return serialVersionUID;
 	}
 
-	
-	
 	@Override
 	public String toString() {
-		return "Scuola [id=" + id + ", ragioneSociale=" + ragioneSociale + ", pIva=" + pIva + ", corsi=" + corsi + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Scuola [");
+		if (id != null) {
+			builder.append("id=");
+			builder.append(id);
+			builder.append(", ");
+		}
+		if (ragioneSociale != null) {
+			builder.append("ragioneSociale=");
+			builder.append(ragioneSociale);
+			builder.append(", ");
+		}
+		if (pIva != null) {
+			builder.append("pIva=");
+			builder.append(pIva);
+			builder.append(", ");
+		}
+		if (corsi != null) {
+			builder.append("corsi=");
+			builder.append(corsi);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
+
+	
+	
+
 	
 	
 

@@ -58,11 +58,31 @@ public class Studente implements Serializable {
 	}
 
 
-	
 	@Override
 	public String toString() {
-		return "Studente [id=" + id + ", nome=" + nome + ", indirizzo=" + indirizzo + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Studente [");
+		if (id != null) {
+			builder.append("id=");
+			builder.append(id);
+			builder.append(", ");
+		}
+		if (nome != null) {
+			builder.append("nome=");
+			builder.append(nome);
+			builder.append(", ");
+		}
+		if (indirizzo != null) {
+			builder.append("indirizzo=");
+			builder.append(indirizzo);
+		}
+		builder.append("]");
+		return builder.toString();
 	}
+
+
+	
+	
 	
 	
 
