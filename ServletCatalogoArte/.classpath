@@ -13,5 +13,11 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/flexjson.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpclient.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpcore.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/httpmime.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
