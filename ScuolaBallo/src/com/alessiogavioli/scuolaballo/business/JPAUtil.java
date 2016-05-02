@@ -63,5 +63,6 @@ public class JPAUtil {
 
 	public void close() {
 		em.close();
+		emf.close();
 	}
 }

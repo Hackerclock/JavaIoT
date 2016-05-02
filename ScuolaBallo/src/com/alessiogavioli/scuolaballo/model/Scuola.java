@@ -9,7 +9,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+
+
+@NamedQueries ({
+
+	@NamedQuery(name = "CorsiPerScuola", query = "SELECT u.corsi FROM com.alessiogavioli.scuolaballo.model.Scuola u WHERE u.ragioneSociale=:nome"),
+	@NamedQuery(name = "DocentiConQualifica", query = "SELECT d FROM com.alessiogavioli.scuolaballo.model.Scuola u JOIN u.docenti d JOIN d.qualifiche q WHERE u.ragioneSociale=:nome AND q.nome=:qualifica"),					
+	@NamedQuery(name = "StudentiPerCorso", query = "SELECT c.studenti FROM com.alessiogavioli.scuolaballo.model.Corso c WHERE c.nome=:nome"),
+	@NamedQuery(name = "UltimoCorsoAvviato", query = "SELECT c FROM com.alessiogavioli.scuolaballo.model.Scuola s JOIN s.corsi c WHERE s.ragioneSociale=:nome AND c.dataInizio=(SELECT max(c1.dataInizio) FROM com.alessiogavioli.scuolaballo.model.Corso c1)")
+	
+	
+})
 
 @Entity(name = "Scuole")
 public class Scuola implements Serializable {

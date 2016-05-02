@@ -1,6 +1,7 @@
 package com.alessiogavioli.scuolaballo.model;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -34,6 +35,10 @@ public class Corso implements Serializable {
 	
 	@ManyToOne
 	private Qualifica qualifica;
+	
+	private Date dataInizio;
+	
+	private Date dataFine;
 	
 
 	public Corso() {
@@ -85,6 +90,26 @@ public class Corso implements Serializable {
 	}
 	
 
+	public Date getDataInizio() {
+		return dataInizio;
+	}
+
+
+	public void setDataInizio(Date dataInizio) {
+		this.dataInizio = dataInizio;
+	}
+
+
+	public Date getDataFine() {
+		return dataFine;
+	}
+
+
+	public void setDataFine(Date dataFine) {
+		this.dataFine = dataFine;
+	}
+
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
@@ -96,7 +121,8 @@ public class Corso implements Serializable {
 		for (Iterator<Studente> it = studenti.iterator(); it.hasNext(); )
 			s.append(it.next().toString() + " - ");
 		
-		return nome + " docente: " + docente.toString() + " - " + s.toString() + qualifica.toString();
+		return nome + " docente: " + docente.toString() + " - " + s.toString() + qualifica.toString() + " - data inizio: " + 
+		dataInizio + " - data fine: " + dataFine;
 	}
 	
 	

@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+
 @Entity(name = "docenti")
 public class Docente implements Serializable {
 
@@ -29,7 +30,6 @@ public class Docente implements Serializable {
 	private Set<Qualifica> qualifiche;
 	
 	
-
 	public Docente() {
 		super();
 	}
