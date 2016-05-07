@@ -1,12 +1,12 @@
 package com.alessiogavioli.esempiojpa.business;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
+//import java.util.HashSet;
+//import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
-import com.alessiogavioli.esempiojpa.model.*;
+//import java.util.Set;
+//import com.alessiogavioli.esempiojpa.model.*;
 
 public class DemoJpa {
 

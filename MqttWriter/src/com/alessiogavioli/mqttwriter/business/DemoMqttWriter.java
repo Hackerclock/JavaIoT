@@ -37,10 +37,11 @@ public class DemoMqttWriter {
 		pallets.add(pallet1);
 		pallets.add(pallet2);
 		pallets.add(pallet3);
+		@SuppressWarnings("unused")
 		Carico carico1 = new Carico(pallets);
 		
-		Destinazione dest1 = new Destinazione("41° 53' 30 N", "12° 30' 40 E", "Roma", new GregorianCalendar(2016, 2, 1).getTime(), new GregorianCalendar(2016, 2, 1).getTime());
-		Destinazione dest2 = new Destinazione("43° 46' 45 N", "11° 14' 46 E", "Firenze", new GregorianCalendar(2016, 2, 1).getTime(), new GregorianCalendar(2016, 2, 1).getTime());
+		Destinazione dest1 = new Destinazione("41ï¿½ 53' 30 N", "12ï¿½ 30' 40 E", "Roma", new GregorianCalendar(2016, 2, 1).getTime(), new GregorianCalendar(2016, 2, 1).getTime());
+		Destinazione dest2 = new Destinazione("43ï¿½ 46' 45 N", "11ï¿½ 14' 46 E", "Firenze", new GregorianCalendar(2016, 2, 1).getTime(), new GregorianCalendar(2016, 2, 1).getTime());
 		List<Destinazione> destinazioni = new ArrayList<>();
 		destinazioni.add(dest1);
 		destinazioni.add(dest2);

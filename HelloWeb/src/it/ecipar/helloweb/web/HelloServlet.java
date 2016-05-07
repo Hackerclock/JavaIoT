@@ -15,6 +15,11 @@ import it.ecipar.helloweb.business.PersonaManager;
 @WebServlet(urlPatterns = { "/hello" })
 public class HelloServlet extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7175122398680683147L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
@@ -35,6 +40,8 @@ public class HelloServlet extends HttpServlet {
 		pm.deserializza();
 		writer.print(pm.getJsonSE());
 		writer.print(pm.getJsonDESE());
+		resp.setContentType("text/html");
+		writer.print("<img src=\"/HelloWeb/img/download.jpg\">");
 		
 	}
 

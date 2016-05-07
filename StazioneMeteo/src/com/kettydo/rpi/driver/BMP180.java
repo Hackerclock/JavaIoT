@@ -13,6 +13,7 @@ public class BMP180 {
 
 	public final static int LITTLE_ENDIAN = 0;
 	public final static int BIG_ENDIAN = 1;
+	@SuppressWarnings("unused")
 	private final static int BMP180_ENDIANNESS = BIG_ENDIAN;
 	// @formatter:off
 	/*
@@ -135,18 +136,19 @@ public class BMP180 {
 	private int readU16(int register) throws Exception {
 		int hi = this.readU8(register);
 		int lo = this.readU8(register + 1);
-		return (BMP180_ENDIANNESS == BIG_ENDIAN) ? (hi << 8) + lo : (lo << 8) + hi; // Big Endian
+		//return (BMP180_ENDIANNESS == BIG_ENDIAN) ? (hi << 8) + lo : (lo << 8) + hi; // Big Endian
+		return (hi << 8) + lo; // Big Endian
 	}
 
 	private int readS16(int register) throws Exception {
 		int hi = 0, lo = 0;
-		if (BMP180_ENDIANNESS == BIG_ENDIAN) {
+		if (true) {
 			hi = this.readS8(register);
 			lo = this.readU8(register + 1);
-		} else {
+		} /*else {
 			lo = this.readS8(register);
 			hi = this.readU8(register + 1);
-		}
+		}*/
 		return (hi << 8) + lo;
 	}
 

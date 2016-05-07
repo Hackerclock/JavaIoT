@@ -4,9 +4,9 @@ import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
-import com.alessiogavioli.aziendalogistica.model.Camion;
+//import com.alessiogavioli.aziendalogistica.model.Camion;
 
-import flexjson.JSONDeserializer;
+//import flexjson.JSONDeserializer;
 
 public class MqttReader implements MqttCallback{
 	

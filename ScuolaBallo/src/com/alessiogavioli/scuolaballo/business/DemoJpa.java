@@ -183,6 +183,13 @@ public class DemoJpa {
 		List<?> corso = jpa.runNamedQuery("UltimoCorsoAvviato", params4);
 		System.out.println(corso.toString() + "\n\n");
 		
+		HashMap<String, Object> params5 = new HashMap<>();
+		params5.put("nomeScuola", "Scuola1");
+		params5.put("nomeDocente", "Docente2");
+		params5.put("nomeCorso", "Salsa");
+		List<?> studentiCorso = jpa.runNamedQuery("StudentiPerCorsoDocente", params5);
+		System.out.println(studentiCorso.toString() + "\n\n");
+		
 		
 		jpa.close();
 

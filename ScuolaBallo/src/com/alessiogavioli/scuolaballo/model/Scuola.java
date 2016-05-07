@@ -19,7 +19,8 @@ import javax.persistence.OneToMany;
 	@NamedQuery(name = "CorsiPerScuola", query = "SELECT u.corsi FROM com.alessiogavioli.scuolaballo.model.Scuola u WHERE u.ragioneSociale=:nome"),
 	@NamedQuery(name = "DocentiConQualifica", query = "SELECT d FROM com.alessiogavioli.scuolaballo.model.Scuola u JOIN u.docenti d JOIN d.qualifiche q WHERE u.ragioneSociale=:nome AND q.nome=:qualifica"),					
 	@NamedQuery(name = "StudentiPerCorso", query = "SELECT c.studenti FROM com.alessiogavioli.scuolaballo.model.Corso c WHERE c.nome=:nome"),
-	@NamedQuery(name = "UltimoCorsoAvviato", query = "SELECT c FROM com.alessiogavioli.scuolaballo.model.Scuola s JOIN s.corsi c WHERE s.ragioneSociale=:nome AND c.dataInizio=(SELECT max(c1.dataInizio) FROM com.alessiogavioli.scuolaballo.model.Corso c1)")
+	@NamedQuery(name = "UltimoCorsoAvviato", query = "SELECT c FROM com.alessiogavioli.scuolaballo.model.Scuola s JOIN s.corsi c WHERE s.ragioneSociale=:nome AND c.dataInizio=(SELECT max(c1.dataInizio) FROM com.alessiogavioli.scuolaballo.model.Corso c1)"),
+	@NamedQuery(name = "StudentiPerCorsoDocente", query = "SELECT c.studenti FROM com.alessiogavioli.scuolaballo.model.Scuola s JOIN s.corsi c JOIN c.docente d WHERE s.ragioneSociale=:nomeScuola AND d.nome=:nomeDocente AND c.nome=:nomeCorso")
 	
 	
 })
