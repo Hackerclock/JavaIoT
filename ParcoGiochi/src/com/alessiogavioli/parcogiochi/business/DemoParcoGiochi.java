@@ -1,10 +1,11 @@
 package com.alessiogavioli.parcogiochi.business;
 
 //import java.util.Date;
-import java.util.HashMap;
+//import java.util.HashMap;
 //import java.util.HashSet;
-import java.util.List;
+//import java.util.List;
 //import java.util.Set;
+
 
 /*
 import com.alessiogavioli.parcogiochi.model.Attrazione;
@@ -14,6 +15,7 @@ import com.alessiogavioli.parcogiochi.model.ParcoGiochi;
 import com.alessiogavioli.parcogiochi.model.Personale;
 import com.alessiogavioli.parcogiochi.model.TipoNegozio;
 */
+
 
 public class DemoParcoGiochi {
 
@@ -322,18 +324,18 @@ public class DemoParcoGiochi {
 		
 		//System.out.println(parcoGiochi1.toString());
 		
-		
-*/
+*/		
+
 		/*HashMap<String, Object> params1 = new HashMap<>();
 		params1.put("nome", "Parco1");
 		List<?> attrazioniQu = jpa.runNamedQuery("AttrazioniPerParco", params1);
 		System.out.println(attrazioniQu.toString() + "\n\n");*/
 		
-		HashMap<String, Object> params2 = new HashMap<>();
+		/*HashMap<String, Object> params2 = new HashMap<>();
 		params2.put("nome", "Parco1");
 		params2.put("tipo", "tipo2");
 		List<?> negoziQu = jpa.runNamedQuery("NegoziPerTipo", params2);
-		System.out.println(negoziQu.toString() + "\n\n");
+		System.out.println(negoziQu.toString() + "\n\n");*/
 		
 		jpa.close();
 
